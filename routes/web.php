@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,18 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin/profile', [ProfileAdminController::class, 'edit'])->name('admin.profile.edit');
+    Route::patch('/admin/profile', [ProfileAdminController::class, 'update'])->name('admin.profile.update');
+    Route::delete('/admin/profile', [ProfileAdminController::class, 'destroy'])->name('admin.profile.destroy');
+});
+
+require __DIR__.'/authadmin.php';
+
+
