@@ -18,7 +18,13 @@
                                     <li>
                                         <a class="active" href="{{ route('index') }}">Início</a>
                                     </li>
-                                    <li><a href="shop-fullwide.html">A Inusiart</a>
+                                    <li>
+                                        <a href="#">Institucional</a>
+                                        <ul class="sub-menu-width">
+                                            <li><a href="{{ route('about') }}">Sobre nós</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">A Inusiart</a>
                                         <ul class="mega-menu-style-2 mega-menu-width2 menu-negative-mrg3">
                                             <li class="mega-menu-sub-width20"><a class="menu-title" href="#">Indústria</a>
                                                 <ul>
@@ -54,7 +60,7 @@
                     <div class="col-lg-4 d-flex justify-content-end">
                         <div class="header-right-wrap header-right-flex">
                             <div class="same-style same-style-mrg-dec">
-                                <a href="login-register.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <a href="{{ route('login') }}"><i class="fa fa-user" aria-hidden="true"></i></a>
                             </div>
                             <div class="same-style same-style-mrg-dec">
                                 <a href="cart.html"><i class="fa fa-shopping-cart"></i>
@@ -80,7 +86,7 @@
                 <div class="col-6">
                     <div class="header-right-wrap header-right-flex">
                         <div class="same-style same-style-mrg-dec">
-                            <a href="login-register.html"><i class="fa fa-user-o"></i></a>
+                            <a href="{{ route('login') }}"><i class="fa fa-user-o"></i></a>
                         </div>
                         <div class="same-style">
                             <a class="cart-active" href="cart.html"><i class="fa fa-cart-arrow-down"></i></a>
@@ -114,6 +120,12 @@
                     <ul>
                         <li>
                             <a href="{{ route('index') }}">Início</a>
+                        </li>
+                        <li class="has-sub-menu">
+                            <a href="#">Institucional</a>
+                            <ul class="sub-menu-2">
+                                <li><a href="{{ route('about') }}">Sobre nós</a></li>
+                            </ul>
                         </li>
                         <li class="has-sub-menu"><a href="#">A Inusiart</a>
                             <ul class="sub-menu-2">

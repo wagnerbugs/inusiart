@@ -33,4 +33,9 @@ class SiteController extends Controller
         $post = Post::with('admin')->where('slug', $blog)->first();
         return view('site.blog-details', compact('post', 'posts'));
     }
+
+    public function about()
+    {
+        return view('site.about');
+    }
 }

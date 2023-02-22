@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ Route::controller(SiteController::class)->group(function () {
     Route::get('/contato', 'contact')->name('contact');
     Route::get('/blog', 'blog')->name('blog');
     Route::get('/blog/{blog:slug}', 'blogShow')->name('blog.show');
+    Route::get('/sobre-nos', 'about')->name('about');
 });
 
 Route::controller(ContactController::class)->group(function () {
@@ -31,6 +33,10 @@ Route::controller(ContactController::class)->group(function () {
 
 Route::controller(NewsletterController::class)->group(function () {
     Route::post('/', 'subscribe')->name('newsletter');
+});
+
+Route::controller(ShopController::class)->group(function () {
+    Route::get('/loja', 'index')->name('shop');
 });
 
 Route::get('/dashboard', function () {

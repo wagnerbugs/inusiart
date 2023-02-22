@@ -22,7 +22,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-md-4 col-sm-12 col-12 widget-area">
                 <div class="logo">
                     <a href="{{ route('index') }}">
@@ -36,8 +35,8 @@
                     <h3 class="footer-title">Links rápidos</h3>
                     <div class="footer-info-list">
                         <ul>
-                            <li><i class="fa fa-plus" aria-hidden="true"></i><a href="#">A Inusiart</a></li>
-                            <li><i class="fa fa-plus" aria-hidden="true"></i><a href="#">Contato</a></li>
+                            <li><i class="fa fa-plus" aria-hidden="true"></i><a href="{{ route('about') }}">A Inusiart</a></li>
+                            <li><i class="fa fa-plus" aria-hidden="true"></i><a href="{{ route('contact') }}">Contato</a></li>
                             <li><i class="fa fa-plus" aria-hidden="true"></i><a href="#">Política de privacidade</a></li>
                             <li><i class="fa fa-plus" aria-hidden="true"></i><a href="#">Termos e condições de uso</a></li>
                         </ul>
@@ -49,7 +48,7 @@
                     <h3 class="footer-title">Contact</h3>
                     <div class="Phone">
                         <div class="img">
-                            <a href="/">
+                            <a href="{{ route('contact') }}">
                                 <img src="{{ url('storage/images/footer/call.png') }}" alt="">
                             </a>
                         </div>
@@ -60,7 +59,7 @@
                     </div>
                     <div class="Email">
                         <div class="img">
-                            <a href="/">
+                            <a href="{{ route('contact') }}">
                                 <img src="{{ url('storage/images/footer/email.png') }}" alt="">
                             </a>
                         </div>
@@ -71,7 +70,7 @@
                     </div>
                     <div class="Location">
                         <div class="img">
-                            <a href="/">
+                            <a href="{{ route('contact') }}">
                                 <img src="{{ url('storage/images/footer/location.png') }}" alt="">
                             </a>
                         </div>
