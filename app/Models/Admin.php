@@ -23,6 +23,11 @@ class Admin extends Authenticatable
         'name',
         'email',
         'password',
+        'level_id',
+        'image',
+        'active',
+        'online',
+        'style',
     ];
 
     /**
@@ -43,4 +48,14 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function level()
+    {
+        return $this->belongsTo(Level::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

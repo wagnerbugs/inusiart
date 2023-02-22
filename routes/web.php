@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileAdminController;
@@ -52,14 +54,21 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
-
 Route::middleware('auth:admin')->group(function () {
+
+    Route::get('/admin', [PanelController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/profile', [ProfileAdminController::class, 'edit'])->name('admin.profile.edit');
     Route::patch('/admin/profile', [ProfileAdminController::class, 'update'])->name('admin.profile.update');
     Route::delete('/admin/profile', [ProfileAdminController::class, 'destroy'])->name('admin.profile.destroy');
+
+    Route::prefix('admin')->name('admin.')->group(function () {
+
+        Route::resources([
+            'pages' => PageController::class,
+        ]);
+
+    });
+
 });
 
 require __DIR__.'/authadmin.php';
