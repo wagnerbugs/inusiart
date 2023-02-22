@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +18,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::controller(SiteController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/contato', 'contact')->name('contact');
+    Route::get('/blog', 'blog')->name('blog');
+    Route::get('/blog/{blog:slug}', 'blogShow')->name('blog.show');
+});
+
+Route::controller(ContactController::class)->group(function () {
+    Route::post('/contato', 'send')->name('send.contact');
+});
+
+Route::controller(NewsletterController::class)->group(function () {
+    Route::post('/', 'subscribe')->name('newsletter');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
