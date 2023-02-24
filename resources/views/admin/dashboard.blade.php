@@ -81,7 +81,7 @@ $submenu = 'dashboard';
                                 <div id="collapse_{{ $contact->id }}" class="collapse {{ $loop->index == 0 ? 'show' : '' }}" aria-labelledby="head_{{ $contact->id }}" data-parent="#contacts">
                                     <div class="card-body">
                                         <p>{{ $contact->message }}</p>
-                                        <form action="" method="post">
+                                        <form action="{{ route('admin.contacts.active', $contact->id) }}" method="post">
                                             @csrf
                                             @method('PATCH')
                                             <input type="hidden" name="active" value="0">

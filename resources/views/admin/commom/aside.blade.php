@@ -46,12 +46,53 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{ $menu == 'products' ? 'menu-open' : '' }}">{{-- NOTE: menu-open --}}
+                    <a href="#" class="nav-link {{ $menu == 'products' ? 'active' : '' }}">{{-- NOTE: active --}}
+                        <i class="nav-icon fas fa-newspaper text-primary"></i>
+                        <p>
+                            Produtos
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.products.create') }}" class="nav-link {{ $submenu == 'products-create' ? 'active' : '' }}">{{-- NOTE: active --}}
+                                <i class="fas fa-file-circle-plus nav-icon text-primary"></i>
+                                <p>Cadastrar produto</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.products.index') }}"" class=" nav-link {{ $submenu=='products' ? 'active' : '' }}">
+                                <i class="fas fa-folder-tree nav-icon text-primary"></i>
+                                <p>Listar produtos</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.categories.index') }}" class="nav-link {{ $submenu == 'categories' ? 'active' : '' }}">
+                                <i class="fas fa-diagram-project nav-icon text-primary"></i>
+                                <p>Categorias</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 @if (Auth::guard('admin')->user()->level_id == 1)
                 <li class="nav-item">
-                    <a href="" class="nav-link {{ $menu == 'contacts' ? 'active' : '' }}">
+                    <a href="{{ route('admin.contacts.index') }}" class="nav-link {{ $menu == 'contacts' ? 'active' : '' }}">
                         <i class="nav-icon fas fa-envelope"></i>
                         <p>
                             Contatos
+                        </p>
+                    </a>
+                </li>
+                @endif
+
+                @if (Auth::guard('admin')->user()->level_id == 1)
+                <li class="nav-item">
+                    <a href="{{ route('admin.pages.index') }}" class="nav-link {{ $menu == 'pages' ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-file-contract"></i>
+                        <p>
+                            Páginas
                         </p>
                     </a>
                 </li>

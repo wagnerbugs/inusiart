@@ -23,7 +23,7 @@ class Product extends Model
         'sku',
         'stock',
         'slug',
-        'active'
+        'active',
     ];
 
     public function category()

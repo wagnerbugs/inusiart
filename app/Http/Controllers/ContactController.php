@@ -10,6 +10,7 @@ class ContactController extends Controller
     public function send(Request $request)
     {
         $data = $request->only('name', 'email', 'phone', 'message');
+        $data['active'] = 1;
         $save = Contact::create($data);
 
         if ($save) {

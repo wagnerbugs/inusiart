@@ -11,6 +11,6 @@ class Newsletter extends Model
 
     protected $fillable = [
         'email',
-        'active'
+        'active',
     ];
 }

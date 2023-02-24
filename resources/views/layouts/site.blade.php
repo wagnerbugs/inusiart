@@ -67,7 +67,6 @@
     <script src="{{ url('storage/js/plugins/sticky-sidebar.js') }}"></script>
     <script src="{{ url('storage/js/plugins/scrollup.js') }}"></script>
     <script src="{{ url('storage/js/plugins/ajax-mail.js') }}"></script>
-    <script src="{{ url('storage/js/plugins/ajax-mail.js') }}"></script>
     <script src="{{ url('storage/js/plugins/skrollr.js') }}"></script>
 
     {{-- Main --}}

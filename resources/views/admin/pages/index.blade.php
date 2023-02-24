@@ -1,7 +1,7 @@
 @extends('admin.layouts.panel')
 @section('head')
 @php
-$menu = 'configs';
+$menu = 'pages';
 $submenu = 'pages';
 @endphp
 

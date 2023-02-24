@@ -14,12 +14,11 @@ class Post extends Model
         'title',
         'subtitle',
         'image',
-        'body'
+        'body',
     ];
 
     public function admin()
     {
         return $this->belongsTo(Admin::class);
     }
-
 }

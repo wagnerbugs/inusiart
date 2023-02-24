@@ -21,13 +21,13 @@
 
         {{-- TOP NAVBAR --}}
 
-        @include('admin.panel.commom.header')
+        @include('admin.commom.header')
 
         {{-- END TOP NAVBAR --}
 
         {{-- SIDEBAR --}}
 
-        @include('admin.panel.commom.aside')
+        @include('admin.commom.aside')
 
         {{-- END SIDEBAR --}}
 
@@ -43,13 +43,13 @@
 
         {{-- SIDEBAR CONTROL --}}
 
-        @include('admin.panel.commom.sidebar')
+        @include('admin.commom.sidebar')
 
         {{-- END SIDEBAR CONTROL --}}
 
         {{-- FOOTER --}}
 
-        @include('admin.panel.commom.footer')
+        @include('admin.commom.footer')
 
         {{-- END FOOTER --}}
 

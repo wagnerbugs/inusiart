@@ -7,7 +7,6 @@ use App\Models\Admin;
 use App\Models\Contact;
 use App\Models\Post;
 use App\Models\User;
-use Illuminate\Http\Request;
 use stdClass;
 
 class PanelController extends Controller
@@ -23,7 +22,7 @@ class PanelController extends Controller
         $this->user = $user;
     }
 
-     /**
+    /**
      * Função que retorna a página inicial do painel de controle administrativo
      *
      * @return view
@@ -36,9 +35,10 @@ class PanelController extends Controller
         $counters->allAdminsOnline = $this->admin->where('online', 1)->count();
         $counters->allPosts = Post::count();
         $counters->allUsers = User::count();
+        $counters->activeContacts = Contact::where('active', 1)->count();
 
         $adminsOnline = Admin::with('level')->where('online', 1)->get();
-        $contacts = Contact::orderByDesc('id')->get();
+        $contacts = Contact::where('active', 1)->orderByDesc('id')->get();
 
         return view('admin.dashboard', compact('counters', 'adminsOnline', 'contacts'));
     }

@@ -25,26 +25,20 @@
                                         </ul>
                                     </li>
                                     <li><a href="#">A Inusiart</a>
-                                        <ul class="mega-menu-style-2 mega-menu-width2 menu-negative-mrg3">
-                                            <li class="mega-menu-sub-width20"><a class="menu-title" href="#">Indústria</a>
+                                        <ul class="mega-menu-style-2 mega-menu-width2 menu-negative-mrg2">
+                                            <li class="mega-menu-sub-width50"><a class="menu-title" href="#">INDÚSTRIA</a>
                                                 <ul>
-                                                    <li><a href="/">Sobre</a></li>
-                                                    <li><a href="/">Serviços</a></li>
-                                                    <li><a href="/">Seja um parceiro</a></li>
+                                                    <li><a href="{{ route('industry.about') }}">Sobre</a></li>
+                                                    <li><a href="{{ route('industry.services') }}">Serviços</a></li>
+                                                    <li><a href="{{ route('industry.faq') }}">Perguntas frequentes</a></li>
+                                                    <li><a href="{{ route('industry.partners') }}">Seja um parceiro</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="mega-menu-sub-width22"><a class="menu-title" href="#">Lojas e Ambientes decorados</a>
+                                            <li class="mega-menu-sub-width50"><a class="menu-title" href="#">LOJAS</a>
                                                 <ul>
-                                                    <li><a href="/">Sobre</a></li>
-                                                    <li><a href="/">Nossas lojas</a></li>
-                                                    <li><a href="/">Seja um franqueado</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu-sub-width20"><a class="menu-title" href="#">Inusiart Design</a>
-                                                <ul>
-                                                    <li><a href="/">Sobre</a></li>
-                                                    <li><a href="/">Coleções</a></li>
-                                                    <li><a href="/">Novidades</a></li>
+                                                    <li><a href="{{ route('environment.about') }}">Sobre</a></li>
+                                                    <li><a href="{{ route('environment.services') }}">Serviços</a></li>
+                                                    <li><a href="{{ route('environment.partners') }}">Seja um franqueado</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -52,7 +46,12 @@
                                     <li>
                                         <a href="{{ route('blog') }}">Blog</a>
                                     </li>
-                                    <li><a href="{{ route('contact') }}">Contato</a></li>
+                                    <li>
+                                        <a href="{{ route('shop') }}">Shop</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('contact') }}">Contato</a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -63,7 +62,7 @@
                                 <a href="{{ route('login') }}"><i class="fa fa-user" aria-hidden="true"></i></a>
                             </div>
                             <div class="same-style same-style-mrg-dec">
-                                <a href="cart.html"><i class="fa fa-shopping-cart"></i>
+                                <a href="{{ route('shop.cart') }}"><i class="fa fa-shopping-cart"></i>
                                     <span>0</span>
                                 </a>
                             </div>
@@ -89,7 +88,7 @@
                             <a href="{{ route('login') }}"><i class="fa fa-user-o"></i></a>
                         </div>
                         <div class="same-style">
-                            <a class="cart-active" href="cart.html"><i class="fa fa-cart-arrow-down"></i></a>
+                            <a class="cart-active" href="{{ route('shop.cart') }}"><i class="fa fa-cart-arrow-down"></i></a>
                         </div>
                         <div class="same-style">
                             <a class="mobile-menu-button-active" href="#"><i class="fa fa-bars"></i></a>
@@ -131,32 +130,30 @@
                             <ul class="sub-menu-2">
                                 <li class="has-sub-menu"><a href="#">Indústria</a>
                                     <ul class="sub-menu-2">
-                                        <li><a href="/">Sobre</a></li>
-                                        <li><a href="/">Serviços</a></li>
-                                        <li><a href="/">Seja um parceiro</a></li>
+                                        <li><a href="{{ route('industry.about') }}">Sobre</a></li>
+                                        <li><a href="{{ route('industry.services') }}">Serviços</a></li>
+                                        <li><a href="{{ route('industry.faq') }}">Perguntas frequentes</a></li>
+                                        <li><a href="{{ route('industry.partners') }}">Seja um parceiro</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-sub-menu"><a href="#">Lojas e Ambientes decorados</a>
                                     <ul class="sub-menu-2">
-                                        <li><a href="/">Sobre</a></li>
-                                        <li><a href="/">Nossas lojas</a></li>
-                                        <li><a href="/">Seja um franqueado</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub-menu"><a href="#">Inusiart Design</a>
-                                    <ul class="sub-menu-2">
-                                        <li><a href="/">Sobre</a></li>
-                                        <li><a href="/">Coleções</a></li>
-                                        <li><a href="/">Novidades</a></li>
+                                        <li><a href="{{ route('environment.about') }}">Sobre</a></li>
+                                        <li><a href="{{ route('environment.services') }}">Serviços</a></li>
+                                        <li><a href="{{ route('environment.partners') }}">Seja um franqueado</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         <li>
                             <a href="{{ route('blog') }}">Blog</a>
-
                         </li>
-                        <li><a href="{{ route('contact') }}">Contato</a></li>
+                        <li>
+                            <a href="{{ route('shop') }}">Shop</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('contact') }}">Contato</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
